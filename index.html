@@ -5,26 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colour Falls</title>
     <style>
-        /* Reset browser default margin and padding */
+        /* Reset margin and padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Set the background image to cover the entire page */
+        /* Ensure the entire body is flexbox container */
         body {
             font-family: Arial, sans-serif;
             height: 100vh;
-            background: url('background-image.png') no-repeat center center fixed;
-            background-size: cover;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            color: #fff;
+            justify-content: space-between; /* Ensures content stays between header and footer */
+            background-color: #000; /* Fallback color */
         }
 
-        /* Header styling */
+        /* Header Styling */
         header {
             width: 100%;
             padding: 20px;
@@ -52,15 +50,26 @@
             text-decoration: underline;
         }
 
-        /* Footer to make sure there's space for scroll or extra content */
+        /* Main content area where background image will be applied */
+        .content {
+            flex: 1;
+            background: url('background-image.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Footer Styling */
         footer {
             text-align: center;
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.7); /* Footer background */
             color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -69,16 +78,19 @@
     <!-- Header Section -->
     <header>
         <h1>Colour Falls</h1>
-        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
     </header>
 
-    <!-- Main content (this will be your full-screen background) -->
-    <!-- If you want to add more content, place it here -->
-    
-    <!-- Optional Footer if needed -->
+    <!-- Main Content Area for background image -->
+    <div class="content">
+        <!-- Optional content here -->
+    </div>
+
+    <!-- Footer Section -->
     <footer>
         &copy; 2024 Colour Falls. All rights reserved.
     </footer>
 
 </body>
 </html>
+
