@@ -12,25 +12,21 @@
             box-sizing: border-box;
         }
 
-        /* Ensure the entire body is flexbox container */
+        /* Ensure the body takes up the full screen height */
         body {
             font-family: Arial, sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Ensures content stays between header and footer */
-            background-color: #000; /* Fallback color */
         }
 
-        /* Header Styling */
+        /* Header styling */
         header {
             width: 100%;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black background */
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
             text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: relative;
             z-index: 1000;
         }
 
@@ -52,7 +48,7 @@
 
         /* Main content area where background image will be applied */
         .content {
-            flex: 1;
+            flex: 1;  /* Take up the remaining vertical space between header and footer */
             background: url('background-image.png') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -60,15 +56,14 @@
             align-items: center;
         }
 
-        /* Footer Styling */
+        /* Footer styling */
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7); /* Footer background */
-            color: white;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+            color: white;
+            text-align: center;
+            position: relative;
             z-index: 1000;
         }
     </style>
@@ -78,12 +73,12 @@
     <!-- Header Section -->
     <header>
         <h1>Colour Falls</h1>
-        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
     </header>
 
-    <!-- Main Content Area for background image -->
+    <!-- Main Content Area (with background image) -->
     <div class="content">
-        <!-- Optional content here -->
+        <!-- Your game logo or any other content can go here -->
     </div>
 
     <!-- Footer Section -->
@@ -93,4 +88,5 @@
 
 </body>
 </html>
+
 
