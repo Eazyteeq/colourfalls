@@ -53,34 +53,20 @@
             text-decoration: underline;
         }
 
-        /* Main Content Area with background image */
+        /* Main Content Area styling */
         .content {
             flex: 1;
-            background: url('background-image.png') no-repeat center center; /* Center and no-repeat */
-            background-size: cover; /* Cover ensures the image fills the area */
-            position: relative; /* Position relative for the overlay */
-        }
-
-        /* Add overlay for the text inside the body */
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-            position: absolute; /* Absolute to fill the content area */
-            top: 0; /* Position at the top */
-            left: 0; /* Position at the left */
-            right: 0; /* Position at the right */
-            bottom: 0; /* Position at the bottom */
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            flex-direction: column; /* Stack items vertically */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        .overlay h2 {
-            font-size: 2.2em;
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         /* Footer styles */
@@ -136,7 +122,10 @@
 
     <!-- Main Content Area -->
     <div class="content">
-        <!-- Overlay for displaying the main message/logo over the background -->
+        <!-- Image added inside the content section -->
+        <img src="background-image.png" alt="Game Image">
+
+        <!-- Optional overlay content for text/logo over the image -->
         <div class="overlay">
             <h2>Catch the Colours, Beat the Score!</h2>
             <p>Challenge your friends, and climb the leaderboard in Colour Falls.</p>
@@ -155,4 +144,5 @@
 
 </body>
 </html>
+
 
