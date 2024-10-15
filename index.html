@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colour Falls</title>
+    <title>Colour Falls - The Ultimate Reaction Game</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,219 +16,304 @@
             box-sizing: border-box;
         }
 
-        /* Ensure body takes full height */
         body, html {
             height: 100%;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
         }
 
-        /* Gradient Header styles */
-        header {
+        /* Main gradient background for the entire page */
+        body {
             background: linear-gradient(90deg, #6a00f4, #2f80ed); /* Purple-blue gradient */
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Header styles with centered branding */
+        header {
             padding: 15px 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fff;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #ffe9c4;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
 
-        .navbar-brand:hover {
-            color: #ffe9c4;
-        }
-
-        .nav-link {
-            color: #fff !important;
-            font-size: 1.1em;
-            margin-right: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #ffe9c4;
-        }
-
-        /* Main Content Area */
-        .content {
-            flex: 1;
+        /* Hero section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('background-image.png'); /* Add your game background here */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            background-color: #000;
-            padding: 40px 0;
-        }
-
-        .content img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            max-height: 100%;
-        }
-
-        /* Responsive overlay content for text/logo over the image */
-        .overlay {
-            position: absolute;
-            z-index: 2;
-            color: white;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 30px;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
             border-radius: 15px;
-            max-width: 80%;
-            width: 50%; /* Default width */
-            transition: width 0.3s ease;
         }
 
-        .overlay h2 {
-            font-size: 2.2em;
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
         }
 
-        .overlay p {
-            font-size: 1.2em;
-            margin-top: 10px;
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
         }
 
-        /* Responsive sizing for download button and overlay */
-        @media (max-width: 768px) {
-            .overlay {
-                width: 80%; /* Increase size on smaller screens */
-            }
-
-            .overlay h2 {
-                font-size: 1.8em;
-            }
-
-            .overlay p {
-                font-size: 1.1em;
-            }
-        }
-
-        /* Footer styles */
-        footer {
-            background: linear-gradient(90deg, #6a00f4, #2f80ed);
+        .hero a {
+            padding: 15px 40px;
+            background-color: #ff5f6d;
             color: white;
-            padding: 15px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero a:hover {
+            background-color: #ffe9c4;
+            color: #000;
+        }
+
+        /* Game description section */
+        .game-description {
+            padding: 60px 20px;
+            background-color: #f8f8f8;
+            color: #000;
             text-align: center;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 1.1em;
+        .game-description h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2f80ed;
         }
 
-        footer a {
-            color: #ffe9c4;
-            text-decoration: none;
-            font-weight: bold;
+        .game-description p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Screenshots section */
-        .screenshots {
-            padding: 50px 0;
+        /* Game feature icons section */
+        .features {
+            padding: 40px 0;
             background-color: #f5f5f5;
             text-align: center;
         }
 
+        .features h3 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #6a00f4;
+        }
+
+        .feature-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Screenshots grid */
+        .screenshots {
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
         .screenshots h3 {
-            font-size: 2em;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            color: #2f80ed;
+            margin-bottom: 40px;
         }
 
         .screenshots .row img {
             width: 100%;
-            height: auto;
-            margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        /* Contact form styles */
+        /* Contact section */
         .contact-form {
-            padding: 40px 0;
-            background-color: #2f80ed;
+            padding: 40px 20px;
+            background: linear-gradient(90deg, #2f80ed, #6a00f4);
             color: white;
             text-align: center;
         }
 
         .contact-form h3 {
+            font-size: 2.5em;
             margin-bottom: 30px;
         }
 
         .contact-form input, .contact-form textarea {
-            margin-bottom: 20px;
             padding: 15px;
             border-radius: 8px;
             border: none;
             width: 100%;
+            margin-bottom: 20px;
+            font-size: 1.1em;
         }
 
         .contact-form button {
             padding: 10px 30px;
-            border-radius: 8px;
-            background-color: #6a00f4;
+            border-radius: 50px;
+            background-color: #ff5f6d;
             color: white;
             border: none;
             font-size: 1.1em;
         }
 
-        @media (min-width: 992px) {
-            .screenshots .row > div {
-                flex: 0 0 32%; /* 3 images in the top row */
+        /* Footer styles */
+        footer {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+            color: #999;
+        }
+
+        footer a {
+            color: #ffe9c4;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
             }
 
-            .screenshots .row:last-child > div {
-                flex: 0 0 49%; /* 2 images in the second row */
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .feature-icons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section with Navbar -->
+    <!-- Header Section -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <nav class="navbar navbar-dark bg-transparent">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Colour Falls</a>
+                <a class="navbar-brand mx-auto" href="#">Colour Falls</a>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <div class="content">
-        <!-- Image added inside the content section -->
-        <img src="background-image.png" alt="Game Image">
-
-        <!-- Overlay content for text/logo over the image -->
-        <div class="overlay">
-            <h2>Catch the Colours, Beat the Score!</h2>
-            <p>Challenge your friends, and climb the leaderboard in Colour Falls.</p>
-            <a href="#" class="btn btn-primary btn-lg">Download Now</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Catch the Colours, Beat the Score!</h1>
+            <p>Test your reaction time in this fast-paced, thrilling game. Download now and climb the leaderboard!</p>
+            <a href="#">Download Now</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Game Description Section -->
+    <!-- Game Description -->
+    <section class="game-description">
+        <h2>About the Game</h2>
+        <p>
+            In Colour Falls, colored balls fall from the top of the screen, and your goal is to tap only the balls that match the border color.
+            The game gets faster over time, testing your reflexes and focus. Tap the wrong color or let the correct ones fall through, and you lose a life.
+            Watch out for heart power-ups to regain lives and points boosts for bonus points! Can you top the leaderboard?
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h3>Key Features</h3>
+        <div class="container">
+            <div class="feature-icons">
+                <div class="feature">
+                    <img src="speed.png" alt="Speed Feature">
+                    <p>Fast-paced action</p>
+                </div>
+                <div class="feature">
+                    <img src="leaderboard.png" alt="Leaderboard">
+                    <p>Climb the Leaderboard</p>
+                </div>
+                <div class="feature">
+                    <img src="lives.png" alt="Lives">
+                    <p>Power-up & Heart boosts</p>
+                </div>
+                <div class="feature">
+                    <img src="multicolor.png" alt="Multicolor">
+                    <p>Colourful Challenges</p>
+                </div>
+                <div class="feature">
+                    <img src="reaction.png" alt="Reaction">
+                    <p>Test your reaction time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
     <section class="screenshots">
         <h3>Game Screenshots</h3>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><img src="screenshot1.png" alt="Screenshot 1"></div>
-                <div class="col-md-4"><img src="screenshot2.png" alt="Screenshot 2"></div>
-                <div class="col-md-4"><img src="screenshot3.png" alt="Screenshot 3"></div>
+                <div class="col-md-4">
+                    <img src="screenshot1.png" alt="Screenshot 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="screenshot2.png" alt="Screenshot 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="screenshot3.png" alt="Screenshot 3">
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-6"><img src="screenshot4.png" alt="Screenshot 4"></div>
-                <div class="col-md-6"><img src="screenshot5.png" alt="Screenshot 5"></div>
+                <div class="col-md-6">
+                    <img src="screenshot4.png" alt="Screenshot 4">
+                </div>
+                <div class="col-md-6">
+                    <img src="screenshot5.png" alt="Screenshot 5">
+                </div>
             </div>
         </div>
     </section>
@@ -236,16 +321,10 @@
     <!-- Contact Form Section -->
     <section class="contact-form">
         <h3>Contact Us</h3>
-        <form action="#" method="POST">
+        <form action="submit_form.php" method="POST">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                </div>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </div>
@@ -257,7 +336,7 @@
         <p>&copy; 2024 Colour Falls. All rights reserved. | <a href="privacypolicy.html">Privacy Policy</a></p>
     </footer>
 
-    <!-- Bootstrap JS (for navbar toggling and other features) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
