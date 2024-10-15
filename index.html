@@ -23,23 +23,20 @@
             flex-direction: column;
         }
 
-        /* Header styles */
+        /* Gradient Header styles */
         header {
-            background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient background */
-            padding: 10px 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .navbar {
-            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, #6a00f4, #2f80ed); /* Purple-blue gradient */
+            padding: 15px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .navbar-brand {
-            font-size: 2.2em;
+            font-size: 2.5em;
             font-weight: bold;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px; /* Spacing for a modern look */
+            letter-spacing: 3px;
         }
 
         .navbar-brand:hover {
@@ -49,9 +46,7 @@
         .nav-link {
             color: #fff !important;
             font-size: 1.1em;
-            font-weight: 500;
             margin-right: 20px;
-            position: relative;
             transition: color 0.3s ease;
         }
 
@@ -59,24 +54,7 @@
             color: #ffe9c4;
         }
 
-        /* Add bottom underline on hover */
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background-color: #fff;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Main Content Area styling */
+        /* Main Content Area */
         .content {
             flex: 1;
             display: flex;
@@ -84,37 +62,60 @@
             align-items: center;
             position: relative;
             background-color: #000;
+            padding: 40px 0;
         }
 
         .content img {
             width: 100%;
             height: auto;
-            object-fit: contain; /* Ensure the image is fully displayed */
-            max-height: 100%; /* Max height to fit within the content area */
+            object-fit: contain;
+            max-height: 100%;
         }
 
-        /* Overlay content for text/logo over the image */
+        /* Responsive overlay content for text/logo over the image */
         .overlay {
-            position: absolute; /* Overlay is absolutely positioned */
+            position: absolute;
             z-index: 2;
             color: white;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.6);
             padding: 30px;
             border-radius: 15px;
+            max-width: 80%;
+            width: 50%; /* Default width */
+            transition: width 0.3s ease;
         }
 
         .overlay h2 {
             font-size: 2.2em;
         }
 
+        .overlay p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Responsive sizing for download button and overlay */
+        @media (max-width: 768px) {
+            .overlay {
+                width: 80%; /* Increase size on smaller screens */
+            }
+
+            .overlay h2 {
+                font-size: 1.8em;
+            }
+
+            .overlay p {
+                font-size: 1.1em;
+            }
+        }
+
         /* Footer styles */
         footer {
-            background: linear-gradient(90deg, #ff5f6d, #ffc371);
+            background: linear-gradient(90deg, #6a00f4, #2f80ed);
             color: white;
             padding: 15px;
             text-align: center;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Shadow on top */
         }
 
         footer p {
@@ -132,24 +133,62 @@
             text-decoration: underline;
         }
 
-        /* Responsive font sizes */
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.8em;
-            }
-
-            .overlay h2 {
-                font-size: 1.8em;
-            }
+        /* Screenshots section */
+        .screenshots {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            text-align: center;
         }
 
-        @media (max-width: 576px) {
-            .navbar-brand {
-                font-size: 1.6em;
+        .screenshots h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .screenshots .row img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact form styles */
+        .contact-form {
+            padding: 40px 0;
+            background-color: #2f80ed;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 30px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+        }
+
+        .contact-form button {
+            padding: 10px 30px;
+            border-radius: 8px;
+            background-color: #6a00f4;
+            color: white;
+            border: none;
+            font-size: 1.1em;
+        }
+
+        @media (min-width: 992px) {
+            .screenshots .row > div {
+                flex: 0 0 32%; /* 3 images in the top row */
             }
 
-            .overlay h2 {
-                font-size: 1.5em;
+            .screenshots .row:last-child > div {
+                flex: 0 0 49%; /* 2 images in the second row */
             }
         }
     </style>
@@ -161,16 +200,6 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Colour Falls</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
@@ -184,10 +213,44 @@
         <div class="overlay">
             <h2>Catch the Colours, Beat the Score!</h2>
             <p>Challenge your friends, and climb the leaderboard in Colour Falls.</p>
-            <!-- Call-to-action button -->
             <a href="#" class="btn btn-primary btn-lg">Download Now</a>
         </div>
     </div>
+
+    <!-- Game Description Section -->
+    <section class="screenshots">
+        <h3>Game Screenshots</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><img src="screenshot1.png" alt="Screenshot 1"></div>
+                <div class="col-md-4"><img src="screenshot2.png" alt="Screenshot 2"></div>
+                <div class="col-md-4"><img src="screenshot3.png" alt="Screenshot 3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><img src="screenshot4.png" alt="Screenshot 4"></div>
+                <div class="col-md-6"><img src="screenshot5.png" alt="Screenshot 5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h3>Contact Us</h3>
+        <form action="#" method="POST">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </section>
 
     <!-- Footer Section -->
     <footer>
@@ -199,6 +262,5 @@
 
 </body>
 </html>
-
 
 
